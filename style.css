@@ -1,0 +1,41 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: Segoe UI, sans-serif;
+}
+
+body{
+    background:black;
+}
+
+.clock{
+    height: 400px;
+    width: 400px;
+    background-color: rgba(255, 255,255, .9);
+    border-radius: 50%;
+    border: 3px solid orange;
+    position: relative;
+}
+
+.clock .number{
+    --rotate: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotate));
+}
+
+/*rotation set for the numbers on the clock*/
+.clock .number1{--rotate: 30deg;}
+.clock .number2{--rotate: 60deg;}
+.clock .number3{--rotate: 90deg;}
+.clock .number4{--rotate: 120deg;}
+.clock .number5{--rotate: 150deg;}
+.clock .number6{--rotate: 180deg;}
+.clock .number7{--rotate: 210deg;}
+.clock .number8{--rotate: 240deg;}
+.clock .number9{--rotate: 270deg;}
+.clock .number10{--rotate: 300deg;}
+.clock .number11{--rotate: 330deg;}
+
+

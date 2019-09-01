@@ -5,6 +5,11 @@
 
 body{
     background:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .clock{
@@ -23,6 +28,7 @@ body{
     height: 100%;
     text-align: center;
     transform: rotate(var(--rotate));
+    font-size: 1.5rem;
 }
 
 /*rotation set for the numbers on the clock*/
@@ -38,4 +44,49 @@ body{
 .clock .number10{--rotate: 300deg;}
 .clock .number11{--rotate: 330deg;}
 
+.clock .hand{
+    --rotate: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 50%;
+    background-color: black;
+    transform: translateX(-50%) rotate(calc(var(--rotate) * 1deg));
+    border: 1px solid orange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10; 
+}
 
+.clock .hand.Seconds{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.Minutes{
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+
+.clock .hand.Hours{
+    width: 10px;
+    height: 35%;
+    background-color: black;
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
